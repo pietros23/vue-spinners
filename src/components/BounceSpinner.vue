@@ -1,8 +1,8 @@
 <template>
   <div v-if="isLoading">
     <div class="spinner" :style="{width: width, height: height}">
-      <div class="double-bounce1" :style="{width: width, height: height}"></div>
-      <div class="double-bounce2" :style="{width: width, height: height}"></div>
+      <div class="double-bounce1" :style="{backgroundColor: color}"></div>
+      <div class="double-bounce2" :style="{backgroundColor: color}"></div>
     </div>
   </div>
 </template>
@@ -20,11 +20,11 @@
       },
       width: {
         type: String,
-        default: '100%',
+        default: '40px',
       },
       height: {
         type: String,
-        default: '100%',
+        default: '40px',
       }
     },
     data() {
@@ -48,7 +48,6 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #333;
     opacity: 0.6;
     position: absolute;
     top: 0;
