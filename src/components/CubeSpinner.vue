@@ -1,8 +1,8 @@
 <template>
   <div v-if="isLoading">
-    <div class="spinner">
-      <div class="cube1"></div>
-      <div class="cube2"></div>
+    <div class="spinner" :style="{width: width, height: height}">
+      <div class="cube1" :style="{backgroundColor: color}"></div>
+      <div class="cube2" :style="{backgroundColor: color}"></div>
     </div>
   </div>
 </template>
@@ -20,21 +20,16 @@
       },
       width: {
         type: String,
-        default: '40',
+        default: '40px',
       },
       height: {
         type: String,
-        default: '40',
+        default: '40px',
       }
     },
     data() {
       return {
-        isLoading: this.loading,
-        styles: {
-          backgroundColor: this.color,
-          width: this.width + 'px',
-          height: this.height + 'px'
-        }
+        isLoading: this.loading
       }
     },
     name: "CubeSpinner"
@@ -52,7 +47,6 @@
 
   .cube1,
   .cube2 {
-    background-color: #333;
     width: 15px;
     height: 15px;
     position: absolute;

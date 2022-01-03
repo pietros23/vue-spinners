@@ -1,6 +1,6 @@
 <template>
   <div v-if="isLoading">
-    <div class="sk-folding-cube">
+    <div class="sk-folding-cube" :style="{backgroundColor: color, width: width, height: height}">
       <div class="sk-cube1 sk-cube"></div>
       <div class="sk-cube2 sk-cube"></div>
       <div class="sk-cube4 sk-cube"></div>
@@ -22,11 +22,11 @@
       },
       width: {
         type: String,
-        default: '40',
+        default: '40px',
       },
       height: {
         type: String,
-        default: '40',
+        default: '40px',
       }
     },
     data() {
@@ -47,8 +47,6 @@
 <style scoped>
   .sk-folding-cube {
     margin: 20px auto;
-    width: 40px;
-    height: 40px;
     position: relative;
     -webkit-transform: rotateZ(45deg);
     transform: rotateZ(45deg);
@@ -71,7 +69,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #333;
     -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
     animation: sk-foldCubeAngle 2.4s infinite linear both;
     -webkit-transform-origin: 100% 100%;

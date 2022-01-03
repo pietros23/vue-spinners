@@ -1,8 +1,8 @@
 <template>
   <div v-if="isLoading">
-    <div class="spinner">
-      <div class="double-bounce1"></div>
-      <div class="double-bounce2"></div>
+    <div class="spinner" :style="{width: width, height: height}">
+      <div class="double-bounce1" :style="{width: width, height: height}"></div>
+      <div class="double-bounce2" :style="{width: width, height: height}"></div>
     </div>
   </div>
 </template>
@@ -20,21 +20,16 @@
       },
       width: {
         type: String,
-        default: '50',
+        default: '100%',
       },
       height: {
         type: String,
-        default: '40',
+        default: '100%',
       }
     },
     data() {
       return {
-        isLoading: this.loading,
-        styles: {
-          backgroundColor: this.color,
-          width: this.width + 'px',
-          height: this.height + 'px'
-        }
+        isLoading: this.loading
       }
     },
     name: "BounceSpinner"
@@ -44,9 +39,6 @@
 
 <style scoped>
   .spinner {
-    width: 40px;
-    height: 40px;
-
     position: relative;
     margin: 100px auto;
   }

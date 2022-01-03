@@ -1,11 +1,11 @@
 <template>
   <div v-if="isLoading">
     <div class="spinner">
-      <div class="rect1"></div>
-      <div class="rect2"></div>
-      <div class="rect3"></div>
-      <div class="rect4"></div>
-      <div class="rect5"></div>
+      <div class="rect1" :style="{backgroundColor: color, width: width, height: height}"></div>
+      <div class="rect2" :style="{backgroundColor: color, width: width, height: height}"></div>
+      <div class="rect3" :style="{backgroundColor: color, width: width, height: height}"></div>
+      <div class="rect4" :style="{backgroundColor: color, width: width, height: height}"></div>
+      <div class="rect5" :style="{backgroundColor: color, width: width, height: height}"></div>
     </div>
   </div>
 </template>
@@ -23,21 +23,16 @@
       },
       width: {
         type: String,
-        default: '50',
+        default: '50px',
       },
       height: {
         type: String,
-        default: '40',
+        default: '40px',
       }
     },
     data() {
       return {
-        isLoading: this.loading,
-        styles: {
-          backgroundColor: this.color,
-          width: this.width + 'px',
-          height: this.height + 'px'
-        }
+        isLoading: this.loading
       }
     },
     name: "TileSpinner"
@@ -48,16 +43,11 @@
 <style scoped>
   .spinner {
     margin: 100px auto;
-    width: 50px;
-    height: 40px;
     text-align: center;
     font-size: 10px;
   }
 
   .spinner>div {
-    background-color: #333;
-    height: 100%;
-    width: 6px;
     display: inline-block;
 
     -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;

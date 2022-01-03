@@ -1,6 +1,6 @@
 <template>
   <div v-if="isLoading">
-    <div class="spinner" :style="styles"></div>
+    <div class="spinner" :style="{backgroundColor: color, width: width, height: height}"></div>
   </div>
 </template>
 
@@ -17,21 +17,16 @@
       },
       width: {
         type: String,
-        default: '40',
+        default: '40px',
       },
       height: {
         type: String,
-        default: '40',
+        default: '40px',
       }
     },
     data(){
       return {
-        isLoading: this.loading,
-        styles: {
-          backgroundColor: this.color,
-          width: this.width + 'px',
-          height: this.height + 'px'
-        }
+        isLoading: this.loading
       }
     },
     name: "SquareSpinner"
@@ -40,10 +35,6 @@
 
 <style scoped>
   .spinner {
-    width: 40px;
-    height: 40px;
-    background-color: #333;
-
     margin: 100px auto;
     -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
     animation: sk-rotateplane 1.2s infinite ease-in-out;

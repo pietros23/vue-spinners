@@ -1,18 +1,18 @@
 <template>
   <div v-if="isLoading">
-    <div class="sk-fading-circle">
-      <div class="sk-circle1 sk-circle"></div>
-      <div class="sk-circle2 sk-circle"></div>
-      <div class="sk-circle3 sk-circle"></div>
-      <div class="sk-circle4 sk-circle"></div>
-      <div class="sk-circle5 sk-circle"></div>
-      <div class="sk-circle6 sk-circle"></div>
-      <div class="sk-circle7 sk-circle"></div>
-      <div class="sk-circle8 sk-circle"></div>
-      <div class="sk-circle9 sk-circle"></div>
-      <div class="sk-circle10 sk-circle"></div>
-      <div class="sk-circle11 sk-circle"></div>
-      <div class="sk-circle12 sk-circle"></div>
+    <div class="sk-fading-circle" :style="{width: width, height: height}">
+      <div class="sk-circle1 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle2 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle3 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle4 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle5 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle6 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle7 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle8 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle9 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle10 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle11 sk-circle" :style="{backgroundColor: color}"></div>
+      <div class="sk-circle12 sk-circle" :style="{backgroundColor: color}"></div>
     </div>
   </div>
 </template>
@@ -30,21 +30,16 @@
       },
       width: {
         type: String,
-        default: '40',
+        default: '40px',
       },
       height: {
         type: String,
-        default: '40',
+        default: '40px',
       }
     },
     data() {
       return {
-        isLoading: this.loading,
-        styles: {
-          backgroundColor: this.color,
-          width: this.width + 'px',
-          height: this.height + 'px'
-        }
+        isLoading: this.loading
       }
     },
     name: "CircleSpinner"

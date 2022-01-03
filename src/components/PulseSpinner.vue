@@ -1,6 +1,6 @@
 <template>
   <div v-if="isLoading">
-    <div class="spinner"></div>
+    <div class="spinner" :style="{backgroundColor: color, width: width, height: height}"></div>
   </div>
 </template>
 
@@ -17,21 +17,16 @@
       },
       width: {
         type: String,
-        default: '40',
+        default: '40px',
       },
       height: {
         type: String,
-        default: '40',
+        default: '40px',
       }
     },
     data() {
       return {
-        isLoading: this.loading,
-        styles: {
-          backgroundColor: this.color,
-          width: this.width + 'px',
-          height: this.height + 'px'
-        }
+        isLoading: this.loading
       }
     },
     name: "PulseSpinner"
